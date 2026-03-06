@@ -1,0 +1,80 @@
+# NexusAI Intern Challenge - Requirements
+
+# ============================================================================
+# Core Dependencies
+# ============================================================================
+
+# Python 3.9 or higher required
+# python>=3.9
+
+# ============================================================================
+# API Providers (Install at least ONE)
+# ============================================================================
+
+# Anthropic Claude API
+anthropic>=0.7.0,<1.0.0
+
+# OpenAI GPT API
+openai>=1.0.0,<2.0.0
+
+# ============================================================================
+# Database
+# ============================================================================
+
+# Async PostgreSQL driver (recommended)
+asyncpg>=0.29.0,<1.0.0
+
+# Alternative: psycopg3 (also supports async)
+psycopg[binary]>=3.1.0,<4.0.0
+
+# ============================================================================
+# Testing & Development
+# ============================================================================
+
+# Pytest - Testing framework
+pytest>=7.4.0,<8.0.0
+
+# Pytest async support
+pytest-asyncio>=0.21.0,<1.0.0
+
+# Code coverage
+pytest-cov>=4.1.0,<5.0.0
+
+# ============================================================================
+# Utilities
+# ============================================================================
+
+# Environment variables from .env files
+python-dotenv>=1.0.0,<2.0.0
+
+# Type hints (for Python 3.9 support of newer typing features)
+typing-extensions>=4.7.0,<5.0.0
+
+# ============================================================================
+# Optional: Development Tools
+# ============================================================================
+
+# Code formatter
+black>=23.7.0,<24.0.0
+
+# Linter
+pylint>=2.17.0,<3.0.0
+
+# Type checking
+mypy>=1.4.0,<2.0.0
+
+# ============================================================================
+# Installation Instructions
+# ============================================================================
+
+# Basic installation (minimal, for production):
+# pip install -r requirements.txt
+
+# Development installation (with dev tools):
+# pip install -r requirements.txt
+
+# To update packages:
+# pip install --upgrade -r requirements.txt
+
+# To freeze exact versions in use:
+# pip freeze > requirements-lock.txt
