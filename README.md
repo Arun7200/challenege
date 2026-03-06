@@ -8,7 +8,7 @@ A complete AI-powered telecom customer support system built with async Python. T
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Project Structure](#project-structure)
 - [Quick Start](#quick-start)
@@ -19,7 +19,7 @@ A complete AI-powered telecom customer support system built with async Python. T
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 nexusai-intern-challenge/
@@ -47,7 +47,7 @@ nexusai-intern-challenge/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone & Setup
 
@@ -89,20 +89,20 @@ pytest task4/ -v  # Most comprehensive tests
 
 ---
 
-## 🎯 Task Descriptions
+##  Task Descriptions
 
 ### **TASK 1: AI Message Handler** (40 pts | Must Pass)
 
 Build an async Python function that takes a customer message and returns a structured AI response, optimized for different channels.
 
 **Key Features:**
-- ✅ Async function `handle_message()` with timeout handling (10 sec)
-- ✅ Rate limit retry logic (retry once after 2 sec)
-- ✅ Empty input validation (no API call)
-- ✅ Channel-specific formatting (voice: 2 sentences, chat: verbose, WhatsApp: mobile-optimized)
-- ✅ Three system prompts optimized for telecom support
-- ✅ `MessageResponse` dataclass with all required fields
-- ✅ Support for OpenAI or Anthropic APIs
+-  Async function `handle_message()` with timeout handling (10 sec)
+-  Rate limit retry logic (retry once after 2 sec)
+-  Empty input validation (no API call)
+-  Channel-specific formatting (voice: 2 sentences, chat: verbose, WhatsApp: mobile-optimized)
+-  Three system prompts optimized for telecom support
+-  `MessageResponse` dataclass with all required fields
+-  Support for OpenAI or Anthropic APIs
 
 **Files:**
 - [task1/message_handler.py](task1/message_handler.py) — Main implementation
@@ -121,12 +121,12 @@ pytest task1/test_message_handler.py -v
 Design a PostgreSQL schema for call records with proper indexing and a Python repository class.
 
 **Key Features:**
-- ✅ CREATE TABLE with 12 columns (phone, channel, transcript, AI response, confidence, outcome, CSAT, timestamp, duration)
-- ✅ 3 strategic indexes with explanatory comments
-- ✅ CHECK constraints (CSAT 1-5, confidence 0-1, valid channels/outcomes)
-- ✅ `CallRecordRepository` class with async methods
-- ✅ Parameterized queries (NO string formatting)
-- ✅ `get_top_intents_lowest_resolution()` SQL query
+-  CREATE TABLE with 12 columns (phone, channel, transcript, AI response, confidence, outcome, CSAT, timestamp, duration)
+-  3 strategic indexes with explanatory comments
+- CHECK constraints (CSAT 1-5, confidence 0-1, valid channels/outcomes)
+-  `CallRecordRepository` class with async methods
+-  Parameterized queries (NO string formatting)
+- `get_top_intents_lowest_resolution()` SQL query
 
 **Files:**
 - [task2/call_records.py](task2/call_records.py) — Schema + Repository
@@ -167,13 +167,13 @@ ON call_records (intent_type, csat_score, created_at DESC);
 Demonstrate async parallelism by fetching from multiple systems simultaneously vs sequentially.
 
 **Key Features:**
-- ✅ Three mock async functions (CRM 200-400ms, billing 150-350ms, tickets 100-300ms)
-- ✅ `fetch_sequential()` — sum of all latencies (~500-1000ms)
-- ✅ `fetch_parallel()` — concurrent with `asyncio.gather()` (~400ms)
-- ✅ **2x+ speed improvement** (guaranteed in benchmarks)
-- ✅ Graceful error handling (10% billing timeout, `return_exceptions=True`)
-- ✅ `CustomerContext` dataclass with `data_complete` flag
-- ✅ Real timing output and benchmark comparison
+-  Three mock async functions (CRM 200-400ms, billing 150-350ms, tickets 100-300ms)
+-  `fetch_sequential()` — sum of all latencies (~500-1000ms)
+-  `fetch_parallel()` — concurrent with `asyncio.gather()` (~400ms)
+-  **2x+ speed improvement** (guaranteed in benchmarks)
+-  Graceful error handling (10% billing timeout, `return_exceptions=True`)
+-  `CustomerContext` dataclass with `data_complete` flag
+-  Real timing output and benchmark comparison
 
 **Files:**
 - [task3/parallel_fetcher.py](task3/parallel_fetcher.py) — Implementation + benchmarking
@@ -244,11 +244,11 @@ pytest task4/test_escalation_engine.py -v
 ```
 
 **Test Coverage:**
-- ✅ 6 tests for each rule (one per rule)
-- ✅ 2 edge case tests:
+-  6 tests for each rule (one per rule)
+-  2 edge case tests:
   - Edge Case 1: Rule conflict (cancellation vs high confidence) — cancellation wins
   - Edge Case 2: Perfect conditions (AI handles without escalation)
-- ✅ Each test has detailed docstring explaining WHY the rule matters
+-  Each test has detailed docstring explaining WHY the rule matters
 
 ---
 
@@ -266,7 +266,7 @@ Each answer is 150-250 words with specific, implementable solutions.
 
 ---
 
-## 🏃 Running Each Task
+##  Running Each Task
 
 ### Task 1: AI Message Handler
 
@@ -328,7 +328,7 @@ pytest task4/test_escalation_engine.py::TestEscalationRules::test_rule_4_cancell
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Data Flow Diagram
 
@@ -362,7 +362,7 @@ Customer Message
 
 ---
 
-## 📊 Performance Benchmarks
+##  Performance Benchmarks
 
 ### Task 3: Parallel vs Sequential
 
@@ -389,7 +389,7 @@ Customer Message
 
 ---
 
-## 🔧 Dependencies
+##  Dependencies
 
 ### requirements.txt
 
@@ -414,60 +414,3 @@ python-dotenv>=1.0.0  # .env file support
 ```
 
 ---
-
-## 📝 File Checklist
-
-- ✅ task1/message_handler.py (async handler + 3 system prompts)
-- ✅ task1/test_message_handler.py (error case tests)
-- ✅ task2/call_records.py (schema + 3 indexes + repository class)
-- ✅ task2/test_call_records.py (schema validation)
-- ✅ task3/parallel_fetcher.py (sequential vs parallel + benchmark)
-- ✅ task3/test_parallel_fetcher.py (async tests)
-- ✅ task4/escalation_engine.py (6-rule engine)
-- ✅ task4/test_escalation_engine.py (8 comprehensive tests)
-- ✅ ANSWERS.md (design questions Q1-Q4)
-- ✅ README.md (this file)
-- ✅ requirements.txt (dependencies)
-- ✅ .gitignore (ignore node_modules, venv, .env, __pycache__)
-
----
-
-## 🎓 Learning Outcomes
-
-After completing this challenge, you will understand:
-
-1. **Async Python Patterns** — When to use `asyncio.gather()`, how to handle timeouts and retries
-2. **Database Design** — Strategic indexing, constraints, parameterized queries
-3. **System Design** — Tradeoff analysis, scalability, real-world constraints
-4. **Testing** — Async tests, edge cases, explaining WHY a test matters
-5. **Production Thinking** — Error handling, logging, graceful degradation
-
----
-
-## 🤝 Contributing
-
-This is an intern challenge repository. For improvements or bug reports:
-
-1. Create a GitHub issue with clear reproduction steps
-2. Fork and create a feature branch
-3. Submit a pull request with detailed explanation
-
----
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
----
-
-## 👨‍💼 Author
-
-**Challenge Submitted By:** [Your Name]  
-**Date:** March 2026  
-**Contact:** [your.email@company.com]
-
----
-
-**Happy Learning! 🚀**
-
-For questions about the challenge, review the task READMEs or ANSWERS.md file.
